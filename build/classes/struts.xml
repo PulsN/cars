@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+    <package name="default" extends="tiles-default">
+    	<action name="ShowCarList" class="de.nak.cars.action.ShowCarListAction">
+    		<result type="tiles">carList</result>
+    	</action>
+    	
+    	<action name="AddCar">
+    		<result type="tiles">carForm</result>
+    	</action>
+    	
+    	<action name="SaveCar" class="de.nak.cars.action.CarAction" method="save">
+    		<result type="chain">ShowCarList</result>
+    	</action>
+    </package>
+</struts>
